@@ -1,0 +1,116 @@
+\ProvidesPackage{cuhkbeamer}
+
+\usepackage{textpos}
+\usepackage{upquote}
+\usepackage{fontenc}
+\usepackage{listings}
+\usepackage{comment}
+\usepackage{hyperref}
+\usepackage[maxnames=100]{biblatex}
+\usepackage{xeCJK}
+\usepackage{tcolorbox}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{verbatim}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{lipsum}
+\usepackage{graphicx}
+\usepackage{pifont}
+\usepackage{soul}
+\usepackage{minted}
+\usepackage{pdfpages}
+\usepackage{animate}
+\usepackage{xmpmulti}
+\usetikzlibrary{patterns}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\defaultfontfeatures{Mapping=tex-text}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Colors
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\definecolor{cuhkpurple}{RGB}{117,15,109}
+\definecolor{cuhkyellow}{RGB}{221,163,0}
+\definecolor{cuhkblackyellow}{RGB}{153,102,0}
+\definecolor{cuhklightyellow}{RGB}{244,223,176}
+\useoutertheme{infolines}
+\usetheme[height=15mm]{Madrid}
+\setbeamertemplate{navigation symbols}{}
+
+\usefonttheme{professionalfonts}
+
+\usecolortheme[RGB={117,15,109}]{structure}
+\setbeamercolor{block title example}{use=structure,fg=white, bg=cuhkyellow}
+\setbeamercolor{block body example}{use=structure,fg=black, bg=cuhklightyellow}
+\setbeamercolor{alerted text}{fg=cuhkpurple, bg=cuhklightyellow}
+
+\newcommand{\boxalert}[1]{{%
+    \usebeamercolor{alerted text}\colorbox{bg}{\alert{#1}}%
+}}
+
+\lstset{%
+    basicstyle=\ttfamily\small,
+    upquote=true,
+}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\specialcell}[2][c]{%
+    \begin{tabular}[#1]{@{}c@{}}#2\end{tabular}
+}
+\newcommand{\li}{\lstinline}
+
+\sethlcolor{cuhklightyellow}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Logo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\addtobeamertemplate{frametitle}{}{
+\begin{textblock*}{0.8cm}(\textwidth-1.0cm,-0.9cm)
+    \includegraphics[width=1cm]{preamble_res/CUHK_logo.png}
+\end{textblock*}}
+
+\addtobeamertemplate{headline}{}{
+\begin{textblock*}{0.8cm}(\textwidth-1.35cm,0.05cm)
+    \includegraphics[width=1cm]{preamble_res/CUHK_logo.png}
+\end{textblock*}}
+
+\titlegraphic{
+    \includegraphics[width=1.5cm]{preamble_res/CUHK_logo.png}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Hyperlinks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hypersetup{
+    colorlinks,
+    linkcolor=,
+    urlcolor=cuhkpurple
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% New commands
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\slidesection}[1]{
+    \section{#1}
+    \begin{frame}[c]{}
+        \LARGE{Part \thesection. #1}
+    \end{frame}
+}
+\newcommand{\emphacolor}[1]{\textbf{\textcolor{cuhkpurple}{#1}}}
+\newcommand{\mathemphacolor}[1]{\mathbf{\textcolor{cuhkpurple}{#1}}}
